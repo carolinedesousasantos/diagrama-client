@@ -1,0 +1,51 @@
+{
+    "nodes": [{
+        "key": "t2",
+        "items": [{
+            "name": "p1",
+            "iskey": true,
+            "figure": "HEXAGON",
+            "type": "INT"
+        }, {
+            "name": "c2",
+            "iskey": false,
+            "figure": "CIRCLE",
+            "type": "INT"
+        }, {
+            "name": "c1",
+            "iskey": false,
+            "figure": "TRIANGLEUP",
+            "type": "VARCHAR"
+        }]
+    }, {
+        "key": "t1",
+        "items": [{
+            "name": "c1",
+            "iskey": false,
+            "figure": "TRIANGLEUP",
+            "type": "INT"
+        }, {
+            "name": "ap1",
+            "iskey": true,
+            "figure": "DECISION",
+            "type": "INT"
+        }, {
+            "name": "c3",
+            "iskey": false,
+            "figure": "CIRCLE",
+            "type": "DATE"
+        }, {
+            "name": "c2",
+            "iskey": false,
+            "figure": "CIRCLE",
+            "type": "VARCHAR"
+        }]
+    }],
+    "links": [{
+        "from": "t1",
+        "to": "t2",
+        "text": "0..N",
+        "toText": "0..N",
+        "type": "ManyToMany"
+    }]
+}

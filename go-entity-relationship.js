@@ -1,23 +1,20 @@
 Vue.component("go-entity-relationship", {
-    props: ["url"],
     data: function () {
         return {
             nodeData: [],
             linkData: [],
             myDiagram: null,
-            settings: false
+            settings: false,
+            url: 'api.json'
         }
     },
     template: `
     <div>
     <div>
+     <button class="btn btn-success" @click="sendRequestAndGetJson('api2.json')">Ver diagrama</button>
         <div class="row">
             <div class="col">
-                <h3>Entity Relationship Diagram</h3>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary settingsButton" @click="showSettings">Configuración del
-                    diagrama</button>
+                <button class="btn btn-link settingsButton" @click="showSettings"><i class="fas fa-cog fa-lg"></i></button>
             </div>
         </div>
 
@@ -52,8 +49,11 @@ Vue.component("go-entity-relationship", {
         showSettings() {
             this.settings = !this.settings;
         },
-        drawDiagram: async function () {
-            let json = await this.getJSON(this.url);
+        sendRequestAndGetJson(url) {
+            this.drawDiagram(url)  ;
+        },
+        drawDiagram: async function (url) {
+           let json = await this.getJSON(url);
             this.nodeData = json.nodes;
             this.linkData = json.links;
 
@@ -209,12 +209,10 @@ Vue.component("go-entity-relationship", {
             });
         },
         FDLayout() {
-            console.log("funciona");
             if (this.myDiagram) {
                 this.myDiagram.layout = new go.ForceDirectedLayout();
             }
         },
-
 
         GLayout() {
             if (this.myDiagram) {
@@ -305,17 +303,19 @@ Vue.component("go-entity-relationship", {
         },
 
         async getJSON(url) {
+            console.log(url,"teste url");
             return fetch(url).then(res => res.json())
         },
+        
     },
     watch: {
         url: function () {
-            console.log("watch", this.url)
-            this.drawDiagram();
+            this.drawDiagram(this.url);
         },
     },
+  
     mounted() {
-        this.drawDiagram();
+        this.drawDiagram(this.url);
     }
 
 });
