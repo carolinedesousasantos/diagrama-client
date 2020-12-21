@@ -1,0 +1,290 @@
+{
+    "nodes": [{
+            "key": "current_dept_emp",
+            "items": [{
+                    "name": "dept_no",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "emp_no",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "from_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "to_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                }
+            ]
+        },
+        {
+            "key": "departments",
+            "items": [{
+                    "name": "dept_no",
+                    "isPk": 1,
+                    "isFk": 0,
+                    "figure": "Decision",
+                    "color": "Primary"
+                },
+                {
+                    "name": "dept_name",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                }
+            ]
+        },
+        {
+            "key": "dept_emp",
+            "items": [{
+                    "name": "dept_no",
+                    "isPk": 1,
+                    "isFk": 1,
+                    "figure": "Decision",
+                    "color": "PrimaryForeign"
+                },
+                {
+                    "name": "emp_no",
+                    "isPk": 1,
+                    "isFk": 1,
+                    "figure": "Decision",
+                    "color": "PrimaryForeign"
+                },
+                {
+                    "name": "from_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "to_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                }
+            ]
+        },
+        {
+            "key": "dept_emp_latest_date",
+            "items": [{
+                    "name": "emp_no",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "from_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "to_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                }
+            ]
+        },
+        {
+            "key": "dept_manager",
+            "items": [{
+                    "name": "dept_no",
+                    "isPk": 1,
+                    "isFk": 1,
+                    "figure": "Decision",
+                    "color": "PrimaryForeign"
+                },
+                {
+                    "name": "emp_no",
+                    "isPk": 1,
+                    "isFk": 1,
+                    "figure": "Decision",
+                    "color": "PrimaryForeign"
+                },
+                {
+                    "name": "from_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "to_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                }
+            ]
+        },
+        {
+            "key": "employees",
+            "items": [{
+                    "name": "emp_no",
+                    "isPk": 1,
+                    "isFk": 0,
+                    "figure": "Decision",
+                    "color": "Primary"
+                },
+                {
+                    "name": "birth_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "first_name",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "gender",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "hire_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "last_name",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                }
+            ]
+        },
+        {
+            "key": "salaries",
+            "items": [{
+                    "name": "emp_no",
+                    "isPk": 1,
+                    "isFk": 1,
+                    "figure": "Decision",
+                    "color": "PrimaryForeign"
+                },
+                {
+                    "name": "from_date",
+                    "isPk": 1,
+                    "isFk": 0,
+                    "figure": "Decision",
+                    "color": "Primary"
+                },
+                {
+                    "name": "salary",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                },
+                {
+                    "name": "to_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                }
+            ]
+        },
+        {
+            "key": "titles",
+            "items": [{
+                    "name": "emp_no",
+                    "isPk": 1,
+                    "isFk": 1,
+                    "figure": "Decision",
+                    "color": "PrimaryForeign"
+                },
+                {
+                    "name": "from_date",
+                    "isPk": 1,
+                    "isFk": 0,
+                    "figure": "Decision",
+                    "color": "Primary"
+                },
+                {
+                    "name": "title",
+                    "isPk": 1,
+                    "isFk": 0,
+                    "figure": "Decision",
+                    "color": "Primary"
+                },
+                {
+                    "name": "to_date",
+                    "isPk": 0,
+                    "isFk": 0,
+                    "figure": "Cube1",
+                    "color": "None"
+                }
+            ]
+        }
+    ],
+
+    "links": [{
+            "from": "dept_manager",
+            "to": "employees",
+            "text": "0..N",
+            "toText": "1"
+        },
+        {
+            "from": "dept_manager",
+            "to": "departments",
+            "text": "0..N",
+            "toText": "1"
+        },
+        {
+            "from": "dept_emp",
+            "to": "employees",
+            "text": "0..N",
+            "toText": "1"
+        },
+        {
+            "from": "dept_emp",
+            "to": "departments",
+            "text": "0..N",
+            "toText": "1"
+        },
+        {
+            "from": "titles",
+            "to": "employees",
+            "text": "0..N",
+            "toText": "1"
+        },
+        {
+            "from": "salaries",
+            "to": "employees",
+            "text": "0..N",
+            "toText": "1"
+        }
+    ]
+}

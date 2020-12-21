@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Entity Relationship</title>
+    <!-- Copyright 1998-2020 by Northwoods Software Corporation. -->
+    <meta name="description"
+        content="Interactive entity-relationship diagram or data model diagram implemented by GoJS in JavaScript for HTML." />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script src="https://unpkg.com/gojs/release/go.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="go-entity-relationship.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js">
+    </script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <input type="text" id="url" :value="url" @keyup.enter="changeUrl">
+        </div>
+
+        <div>
+            <go-entity-relationship :url="url">
+            </go-entity-relationship>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                // url: 'http://localhost:8080/gojs?url=jdbc:mysql://localhost:3306&user=root&admin&password=12345678',
+                url: 'api.json',
+            },
+            mounted: function () {
+
+            },
+            methods: {
+
+                changeUrl: function (evt) {
+                    let newUrl = evt.target.value;
+                    this.url = newUrl
+                },
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>

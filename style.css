@@ -1,0 +1,22 @@
+#myDiagram {
+    min-height: 90vh;
+}
+
+#url {
+    width: 100%;
+}
+
+.settingsButton {
+    margin: 15px 0 3px auto ;
+    display: block;
+}
+
+.settings {
+    border-radius: 5px;
+    background: #DFDFDF;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.optionButton {
+    margin-bottom: 3px;
+}
