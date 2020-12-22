@@ -269,17 +269,18 @@ Vue.component("go-entity-relationship", {
         },
 
         setAllAttributeVisibilty(visible) {
+         
             if (this.myDiagram) {
                 this.myDiagram.model.startTransaction("Set Attribute Visibility");
                 this.myDiagram.nodes.each(function (node) {
                     // Nodes
-                    var list = node.findObject("ATTRIBUTE_LIST");
+                    var list = node.findObject("LIST");
                     if (list)
 
                         list.visible = visible;
 
                     // Groups (don't apply to expanded groups, which should always have attributes hidden)
-                    list = node.findObject("TABLE_LIST");
+                    list = node.findObject("LIST");
                     if (list && !node.isSubGraphExpanded)
                         list.visible = visible;
                 });
@@ -287,6 +288,7 @@ Vue.component("go-entity-relationship", {
             }
         },
         setAbstractView(useAbstract) {
+            console.log(useAbstract,"useAbstract");
             if (useAbstract !== project.abstractSchema) {
                 project.abstractSchema = useAbstract;
                 projectService.addProject(project);
@@ -303,7 +305,6 @@ Vue.component("go-entity-relationship", {
         },
 
         async getJSON(url) {
-            console.log(url,"teste url");
             return fetch(url).then(res => res.json())
         },
         

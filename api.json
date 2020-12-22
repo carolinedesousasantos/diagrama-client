@@ -1,5 +1,5 @@
 {
-    "nodes": [{
+ "nodes": [{
             "key": "current_dept_emp",
             "items": [{
                     "name": "dept_no",
